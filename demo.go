@@ -1,8 +1,21 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"log"
+	"os"
+
+	"github.com/joho/godotenv"
+)
 
 func main() {
-	fmt.Println("Hello, World!")
+	fmt.Println("")
+
+	godotenv.Load(".env")
+	portString := os.Getenv("PORT")
+	if portString == "" {
+		log.Fatal("$PORT must be set")
+	}
+	fmt.Println("PORT: ", portString)
 
 }
