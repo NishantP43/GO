@@ -19,19 +19,18 @@ func main() {
 		log.Fatal("$PORT must be set")
 	}
 	router := chi.NewRouter()
+	v1Router := chi.NewRouter()
+	v1Router.Get("/health", handlerReadiness)
+	v1Router.Get("/Error", handlerError)
 
 	router.Use(cors.Handler(cors.Options{
-		AllowedOrigins:   []string{"https://*"},
+		AllowedOrigins:   []string{"https://*", "http://*"},
 		AllowedMethods:   []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"},
 		ExposedHeaders:   []string{"Link"},
 		AllowedHeaders:   []string{"*"},
-		AllowCredentials: true,
+		AllowCredentials: false,
 		MaxAge:           300,
 	}))
-
-	v1Router := chi.NewRouter()
-	v1Router.HandleFunc("/healthz", handlerReadiness)
-
 	router.Mount("/v1", v1Router)
 
 	srv := &http.Server{
