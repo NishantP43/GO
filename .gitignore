@@ -1,2 +1,4 @@
 .vscode/
 rssagg
+.env
+thunder-tests/
