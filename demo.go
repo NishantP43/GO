@@ -6,15 +6,26 @@ import (
 	"net/http"
 	"os"
 
+	"github.com/NishantP43/rssagg/internal/database"
+
 	"github.com/go-chi/chi"
 	"github.com/go-chi/cors"
 	"github.com/joho/godotenv"
 )
 
+type apiConfig struct {
+	DB *database.Queries
+}
+
 func main() {
 
 	godotenv.Load(".env")
+
 	portString := os.Getenv("PORT")
+	if portString == "" {
+		log.Fatal("$PORT must be set")
+	}
+	portString = os.Getenv("PORT")
 	if portString == "" {
 		log.Fatal("$PORT must be set")
 	}
