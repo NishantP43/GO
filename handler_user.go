@@ -3,8 +3,10 @@ package main
 import (
 	"encoding/json"
 	"net/http"
+	"time"
 
 	"github.com/NishantP43/rssagg/internal/database"
+	"github.com/google/uuid"
 )
 
 func (apiConfig *apiConfig) handlerCreateUser(w http.ResponseWriter, r *http.Request) {
@@ -19,6 +21,17 @@ func (apiConfig *apiConfig) handlerCreateUser(w http.ResponseWriter, r *http.Req
 		return
 	}
 	defer r.Body.Close()
-	apiConfig.DB.CreateUser(r.Context(), database.CreateUserParams{)
-	respondWithJSON(w, http.StatusOK, map[string]string{"status": "ready"})
+
+	user, err := apiConfig.DB.CreateUser(r.Context(), database.CreateUserParams{
+		ID:        uuid.New(),
+		CreatedAt: time.Now().UTC(),
+		UpdatedAt: time.Now().UTC(),
+		Name:      params.Name,
+	})
+	if err != nil {
+
+		respondWithError(w, http.StatusInternalServerError, err.Error())
+		return
+	}
+	respondWithJSON(w, http.StatusOK, user)
 }
