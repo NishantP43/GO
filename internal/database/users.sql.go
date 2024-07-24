@@ -12,18 +12,21 @@ import (
 	"github.com/google/uuid"
 )
 
+const createUser = `-- name: CreateUser :one
+INSERT INTO users (id, created_at, updated_at, name , api_KEY)
+
+VALUES ($1, $2, $3, $4 , 
+    encode(sha256(random()::text::bytea), 'hex'))
+
+RETURNING id, created_at, updated_at, name, api_key
+`
+
 type CreateUserParams struct {
 	ID        uuid.UUID
 	CreatedAt time.Time
 	UpdatedAt time.Time
 	Name      string
 }
-
-const createUser = `-- name: CreateUser :one
-	INSERT INTO users (id, created_at, updated_at, name)
-	VALUES ($1, $2, $3, $4)
-	RETURNING id, created_at, updated_at, name
-`
 
 func (q *Queries) CreateUser(ctx context.Context, arg CreateUserParams) (User, error) {
 	row := q.db.QueryRowContext(ctx, createUser,
@@ -32,13 +35,30 @@ func (q *Queries) CreateUser(ctx context.Context, arg CreateUserParams) (User, e
 		arg.UpdatedAt,
 		arg.Name,
 	)
-
 	var i User
 	err := row.Scan(
 		&i.ID,
 		&i.CreatedAt,
 		&i.UpdatedAt,
 		&i.Name,
+		&i.ApiKey,
+	)
+	return i, err
+}
+
+const getUserByAPIKey = `-- name: GetUserByAPIKey :one
+SELECT id, created_at, updated_at, name, api_key FROM users WHERE id = $1
+`
+
+func (q *Queries) GetUserByAPIKey(ctx context.Context, id uuid.UUID) (User, error) {
+	row := q.db.QueryRowContext(ctx, getUserByAPIKey, id)
+	var i User
+	err := row.Scan(
+		&i.ID,
+		&i.CreatedAt,
+		&i.UpdatedAt,
+		&i.Name,
+		&i.ApiKey,
 	)
 	return i, err
 }

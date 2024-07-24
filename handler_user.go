@@ -5,6 +5,7 @@ import (
 	"net/http"
 	"time"
 
+	"github.com/NishantP43/rssagg/internal/auth"
 	"github.com/NishantP43/rssagg/internal/database"
 	"github.com/google/uuid"
 )
@@ -34,4 +35,14 @@ func (apiConfig *apiConfig) handlerCreateUser(w http.ResponseWriter, r *http.Req
 		return
 	}
 	respondWithJSON(w, http.StatusOK, databaseUserToUser(user))
+}
+
+func (apiConfig *apiConfig) handlerGetUser(w http.ResponseWriter, r *http.Request) {
+	apikey, err := auth.GetAPIKey(r.Header)
+	if err != nil {
+		respondWithError(w, http.StatusUnauthorized, "Invalid API key")
+		return
+	}
+	user, err := apiConfig.DB.GetUserByAPIKey(r.Context(), apikey)
+
 }
