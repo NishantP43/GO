@@ -20,13 +20,19 @@ type CreateUserParams struct {
 }
 
 const createUser = `-- name: CreateUser :one
-	INSERT INTO users (id, created_at , updated_at, name)
-	VALUES (s1,s2 ,s3 ,s4)
+	INSERT INTO users (id, created_at, updated_at, name)
+	VALUES ($1, $2, $3, $4)
 	RETURNING id, created_at, updated_at, name
 `
 
 func (q *Queries) CreateUser(ctx context.Context, arg CreateUserParams) (User, error) {
-	row := q.db.QueryRowContext(ctx, createUser)
+	row := q.db.QueryRowContext(ctx, createUser,
+		arg.ID,
+		arg.CreatedAt,
+		arg.UpdatedAt,
+		arg.Name,
+	)
+
 	var i User
 	err := row.Scan(
 		&i.ID,
