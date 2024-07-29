@@ -43,6 +43,12 @@ func (apiConfig *apiConfig) handlerGetUser(w http.ResponseWriter, r *http.Reques
 		respondWithError(w, http.StatusUnauthorized, "Invalid API key")
 		return
 	}
-	user, err := apiConfig.DB.GetUserByAPIKey(r.Context(), apikey)
+	apikeyUUID, err := uuid.Parse(apikey)
+	if err != nil {
+		respondWithError(w, http.StatusInternalServerError, err.Error())
+		return
+	}
+
+	user, err := apiConfig.DB.GetUserByAPIKey(r.Context(), apikeyUUID)
 
 }
