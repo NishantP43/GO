@@ -3,10 +3,11 @@ package main
 import (
 	"database/sql"
 	"fmt"
-	_ "github.com/lib/pq"
 	"log"
 	"net/http"
 	"os"
+
+	_ "github.com/lib/pq"
 
 	"github.com/NishantP43/rssagg/internal/database"
 
@@ -47,6 +48,7 @@ func main() {
 	v1Router.Get("/health", handlerReadiness)
 	v1Router.Get("/Error", handlerError)
 	v1Router.Post("/user", apiConfig.handlerCreateUser)
+	v1Router.Get("/user", apiConfig.handlerGetUser)
 
 	router.Use(cors.Handler(cors.Options{
 		AllowedOrigins:   []string{"https://*", "http://*"},

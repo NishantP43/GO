@@ -23,11 +23,17 @@ func (apiConfig *apiConfig) handlerCreateUser(w http.ResponseWriter, r *http.Req
 	}
 	defer r.Body.Close()
 
+	nameUUID, err := uuid.Parse(params.Name)
+	if err != nil {
+		respondWithError(w, http.StatusInternalServerError, err.Error())
+		return
+	}
+
 	user, err := apiConfig.DB.CreateUser(r.Context(), database.CreateUserParams{
 		ID:        uuid.New(),
 		CreatedAt: time.Now().UTC(),
 		UpdatedAt: time.Now().UTC(),
-		Name:      params.Name,
+		Name:      nameUUID.String(),
 	})
 	if err != nil {
 
@@ -50,5 +56,10 @@ func (apiConfig *apiConfig) handlerGetUser(w http.ResponseWriter, r *http.Reques
 	}
 
 	user, err := apiConfig.DB.GetUserByAPIKey(r.Context(), apikeyUUID)
+	if err != nil {
+		respondWithError(w, http.StatusInternalServerError, err.Error())
+		return
+	}
+	respondWithJSON(w, http.StatusOK, databaseUserToUser(user))
 
 }

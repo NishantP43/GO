@@ -4,102 +4,6 @@
     <option name="requestHistoryStates">
       <list>
         <requestHistoryState>
-          <option name="dateTime" value="1720114370099" />
-          <option name="id" value="753ddc76-6b22-4983-aa87-946fe77932ee" />
-          <option name="request">
-            <requestState>
-              <option name="id" value="697c6b33-be3e-4289-aa44-00079f2f3a45" />
-              <option name="method" value="GET" />
-              <option name="name" value="Draft" />
-              <option name="sortWeight" value="1000000" />
-              <option name="url" value="http://localhost:8080/v1/Error" />
-            </requestState>
-          </option>
-          <option name="response">
-            <responseState>
-              <option name="bodyBytesBase64" value="eyJzdGF0dXMiOiJyZWFkeSJ9" />
-              <option name="bodyString" value="{&#10;  &quot;status&quot;: &quot;ready&quot;&#10;}" />
-              <option name="code" value="200" />
-              <option name="contentType" value="application/json" />
-              <option name="headers">
-                <list>
-                  <headerState>
-                    <option name="key" value="Content-Type" />
-                    <option name="value" value="application/json" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="Vary" />
-                    <option name="value" value="Origin" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="Date" />
-                    <option name="value" value="Thu, 04 Jul 2024 17:32:50 GMT" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="Content-Length" />
-                    <option name="value" value="18" />
-                  </headerState>
-                </list>
-              </option>
-              <option name="id" value="753ddc76-6b22-4983-aa87-946fe77932ee" />
-              <option name="message" value="OK" />
-              <option name="prettyResponseType" value="JSON" />
-              <option name="rawBodyString" value="{&quot;status&quot;:&quot;ready&quot;}" />
-              <option name="size" value="18" />
-              <option name="time" value="10" />
-            </responseState>
-          </option>
-          <option name="workspaceId" value="drafts" />
-        </requestHistoryState>
-        <requestHistoryState>
-          <option name="dateTime" value="1720114438721" />
-          <option name="id" value="c5a5f64d-def6-4660-9f14-cf11002a7e00" />
-          <option name="request">
-            <requestState>
-              <option name="id" value="697c6b33-be3e-4289-aa44-00079f2f3a45" />
-              <option name="method" value="GET" />
-              <option name="name" value="Draft" />
-              <option name="sortWeight" value="1000000" />
-              <option name="url" value="http://localhost:8080/v1/Error" />
-            </requestState>
-          </option>
-          <option name="response">
-            <responseState>
-              <option name="bodyBytesBase64" value="eyJzdGF0dXMiOiJyZWFkeSJ9" />
-              <option name="bodyString" value="{&#10;  &quot;status&quot;: &quot;ready&quot;&#10;}" />
-              <option name="code" value="200" />
-              <option name="contentType" value="application/json" />
-              <option name="headers">
-                <list>
-                  <headerState>
-                    <option name="key" value="Content-Type" />
-                    <option name="value" value="application/json" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="Vary" />
-                    <option name="value" value="Origin" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="Date" />
-                    <option name="value" value="Thu, 04 Jul 2024 17:33:58 GMT" />
-                  </headerState>
-                  <headerState>
-                    <option name="key" value="Content-Length" />
-                    <option name="value" value="18" />
-                  </headerState>
-                </list>
-              </option>
-              <option name="id" value="c5a5f64d-def6-4660-9f14-cf11002a7e00" />
-              <option name="message" value="OK" />
-              <option name="prettyResponseType" value="JSON" />
-              <option name="rawBodyString" value="{&quot;status&quot;:&quot;ready&quot;}" />
-              <option name="size" value="18" />
-              <option name="time" value="4" />
-            </responseState>
-          </option>
-          <option name="workspaceId" value="drafts" />
-        </requestHistoryState>
-        <requestHistoryState>
           <option name="dateTime" value="1720114450761" />
           <option name="id" value="121593a3-cfa5-44f8-bd3e-718f11cfe275" />
           <option name="request">
@@ -1093,6 +997,130 @@
               <option name="rawBodyString" value="{&quot;id&quot;:&quot;8f21c185-7c68-4b05-9df4-4c46dc89a1e2&quot;,&quot;created_at&quot;:&quot;2024-07-23T06:36:07.76536Z&quot;,&quot;updated_at&quot;:&quot;2024-07-23T06:36:07.76536Z&quot;,&quot;name&quot;:&quot;Rob&quot;}" />
               <option name="size" value="142" />
               <option name="time" value="60" />
+            </responseState>
+          </option>
+          <option name="workspaceId" value="drafts" />
+        </requestHistoryState>
+        <requestHistoryState>
+          <option name="dateTime" value="1722943831903" />
+          <option name="id" value="3b7fc29e-e462-49a6-9ffd-32d8b9d48e96" />
+          <option name="request">
+            <requestState>
+              <option name="body">
+                <bodyState>
+                  <option name="raw" value="{&#10;  &quot;name&quot;: &quot;Nishant&quot;&#10;}" />
+                  <option name="type" value="JSON" />
+                </bodyState>
+              </option>
+              <option name="headers">
+                <list>
+                  <headerState>
+                    <option name="key" value="Content-Type" />
+                    <option name="value" value="application/json" />
+                  </headerState>
+                </list>
+              </option>
+              <option name="id" value="697c6b33-be3e-4289-aa44-00079f2f3a45" />
+              <option name="method" value="POST" />
+              <option name="name" value="Draft" />
+              <option name="sortWeight" value="1000000" />
+              <option name="url" value="http://localhost:8080/v1/user" />
+            </requestState>
+          </option>
+          <option name="response">
+            <responseState>
+              <option name="bodyBytesBase64" value="eyJlcnJvciI6ImludmFsaWQgVVVJRCBsZW5ndGg6IDcifQ==" />
+              <option name="bodyString" value="{&#10;  &quot;error&quot;: &quot;invalid UUID length: 7&quot;&#10;}" />
+              <option name="code" value="500" />
+              <option name="contentType" value="application/json" />
+              <option name="headers">
+                <list>
+                  <headerState>
+                    <option name="key" value="Content-Type" />
+                    <option name="value" value="application/json" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Vary" />
+                    <option name="value" value="Origin" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Date" />
+                    <option name="value" value="Tue, 06 Aug 2024 11:30:31 GMT" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Content-Length" />
+                    <option name="value" value="34" />
+                  </headerState>
+                </list>
+              </option>
+              <option name="id" value="3b7fc29e-e462-49a6-9ffd-32d8b9d48e96" />
+              <option name="message" value="Internal Server Error" />
+              <option name="prettyResponseType" value="JSON" />
+              <option name="rawBodyString" value="{&quot;error&quot;:&quot;invalid UUID length: 7&quot;}" />
+              <option name="size" value="34" />
+              <option name="time" value="5" />
+            </responseState>
+          </option>
+          <option name="workspaceId" value="drafts" />
+        </requestHistoryState>
+        <requestHistoryState>
+          <option name="dateTime" value="1722943844797" />
+          <option name="id" value="e9ad10a3-5f3c-4a8e-bf1a-a7199b4317e0" />
+          <option name="request">
+            <requestState>
+              <option name="body">
+                <bodyState>
+                  <option name="raw" value="{&#10;  &quot;name&quot;: &quot;BOB&quot;&#10;}" />
+                  <option name="type" value="JSON" />
+                </bodyState>
+              </option>
+              <option name="headers">
+                <list>
+                  <headerState>
+                    <option name="key" value="Content-Type" />
+                    <option name="value" value="application/json" />
+                  </headerState>
+                </list>
+              </option>
+              <option name="id" value="697c6b33-be3e-4289-aa44-00079f2f3a45" />
+              <option name="method" value="POST" />
+              <option name="name" value="Draft" />
+              <option name="sortWeight" value="1000000" />
+              <option name="url" value="http://localhost:8080/v1/user" />
+            </requestState>
+          </option>
+          <option name="response">
+            <responseState>
+              <option name="bodyBytesBase64" value="eyJlcnJvciI6ImludmFsaWQgVVVJRCBsZW5ndGg6IDMifQ==" />
+              <option name="bodyString" value="{&#10;  &quot;error&quot;: &quot;invalid UUID length: 3&quot;&#10;}" />
+              <option name="code" value="500" />
+              <option name="contentType" value="application/json" />
+              <option name="headers">
+                <list>
+                  <headerState>
+                    <option name="key" value="Content-Type" />
+                    <option name="value" value="application/json" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Vary" />
+                    <option name="value" value="Origin" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Date" />
+                    <option name="value" value="Tue, 06 Aug 2024 11:30:44 GMT" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Content-Length" />
+                    <option name="value" value="34" />
+                  </headerState>
+                </list>
+              </option>
+              <option name="id" value="e9ad10a3-5f3c-4a8e-bf1a-a7199b4317e0" />
+              <option name="message" value="Internal Server Error" />
+              <option name="prettyResponseType" value="JSON" />
+              <option name="rawBodyString" value="{&quot;error&quot;:&quot;invalid UUID length: 3&quot;}" />
+              <option name="size" value="34" />
+              <option name="time" value="1" />
             </responseState>
           </option>
           <option name="workspaceId" value="drafts" />
